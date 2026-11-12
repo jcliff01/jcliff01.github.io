@@ -1,64 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My GitHub Page</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            color: #333;
-        }
-
-        .container {
-            text-align: center;
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        h1 {
-            color: #0366d6;
-        }
-
-        a {
-            color: #0366d6;
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        .footer {
-            margin-top: 20px;
-            font-size: 0.9rem;
-            color: #666;
-        }
-    </style>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#080d18">
+<meta name="description" content="Jake — Principal Engineer specializing in enterprise communications, cloud, contact centers, and technology leadership.">
+<title>Jake | Principal Engineer</title>
+<style>
+:root{color-scheme:dark;--bg:#080d18;--panel:#111c2e;--text:#edf3ff;--muted:#a6b4ca;--line:#263449;--mint:#70d6c2;--max:1120px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 85% 4%,#20395a 0,transparent 34rem),radial-gradient(ellipse at 8% 28%,#12372f 0,transparent 30rem),var(--bg);color:var(--text);font:16px/1.65 Inter,system-ui,-apple-system,"Segoe UI",sans-serif}
+a{color:inherit;text-decoration:none}.wrap{width:min(var(--max),calc(100% - 48px));margin:auto}
+nav{height:76px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}.brand{font-size:1.2rem;font-weight:800;letter-spacing:-.05em}.brand span,.eyebrow{color:var(--mint)}.links{display:flex;gap:28px;color:var(--muted);font-size:.9rem}.links a:hover{color:white}
+.hero{padding:110px 0 96px;display:grid;grid-template-columns:1.35fr .65fr;gap:60px;align-items:center}.eyebrow{text-transform:uppercase;letter-spacing:.17em;font-size:.76rem;font-weight:800}h1{font-size:clamp(3.2rem,7vw,5.8rem);line-height:.99;letter-spacing:-.075em;margin:20px 0 26px}h1 em{color:var(--mint);font-style:normal}.lead{color:#bac7da;font-size:1.15rem;max-width:700px}.actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:32px}.btn{display:inline-block;padding:12px 19px;border-radius:9px;font-size:.9rem;font-weight:750;transition:.2s}.btn:hover{transform:translateY(-2px)}.primary{background:var(--mint);color:#071510}.secondary{border:1px solid var(--line);background:#ffffff08}
+.hero-card,.skill,.school{border:1px solid var(--line);background:linear-gradient(145deg,#17263d,#101a2b);border-radius:16px}.hero-card{padding:28px;box-shadow:0 24px 80px #0005}.tiny{color:var(--muted);font-size:.72rem;text-transform:uppercase;letter-spacing:.14em;font-weight:800}.stat{padding:18px 0;border-bottom:1px solid var(--line)}.stat:last-child{border:0;padding-bottom:0}.stat strong{display:block;font-size:2rem;letter-spacing:-.05em}.stat span{color:var(--muted);font-size:.88rem}
+section{padding:76px 0;border-top:1px solid var(--line)}.section-head{display:flex;justify-content:space-between;gap:25px;align-items:end;margin-bottom:34px}h2{font-size:clamp(2rem,4vw,2.8rem);line-height:1.1;letter-spacing:-.055em;margin:10px 0 0}.note{color:var(--muted);max-width:440px;margin:0}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.skill{padding:23px;min-height:145px;background:#111c2ecc}.skill small{color:var(--mint);font-weight:800;letter-spacing:.12em}.skill h3{font-size:1.05rem;margin:12px 0 5px}.skill p,.school p{color:var(--muted);font-size:.9rem;margin:0}
+.timeline{max-width:850px;margin-left:8px;padding-left:30px;border-left:1px solid #70d6c266}.role{position:relative;padding-bottom:30px}.role:last-child{padding-bottom:0}.role:before{content:"";position:absolute;left:-35px;top:9px;width:9px;height:9px;border-radius:50%;background:var(--mint);box-shadow:0 0 0 5px #70d6c21a}.role-top{display:flex;justify-content:space-between;gap:20px;align-items:baseline}.role h3{margin:0;font-size:1.1rem}.date{color:var(--mint);white-space:nowrap;font-size:.85rem;font-weight:700}.company{color:var(--muted);font-size:.9rem;margin:3px 0 0}
+.schools{display:grid;grid-template-columns:1fr 1fr;gap:16px}.school{padding:25px}.school h3{margin:0 0 6px}.school .highlight{color:var(--mint);margin-top:12px;font-weight:650}
+.closing{padding:54px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(120deg,#70d6c21a,#82aaff1a);display:flex;justify-content:space-between;align-items:center;gap:30px}.closing h2{max-width:570px}
+footer{padding:30px 0 42px;color:var(--muted);font-size:.82rem;display:flex;justify-content:space-between;gap:20px}
+@media(max-width:760px){.wrap{width:calc(100% - 36px)}.hero{padding:76px 0 64px;grid-template-columns:1fr;gap:34px}.hero-card{max-width:460px}section{padding:58px 0}.section-head{display:block}.note{margin-top:14px}.grid{grid-template-columns:repeat(2,1fr)}.closing{padding:30px;display:block}.closing .btn{margin-top:20px}}
+@media(max-width:480px){.links{gap:11px;font-size:.74rem}.grid,.schools{grid-template-columns:1fr}.role-top{display:block}.date{display:block;margin-top:4px}footer{display:block}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
 </head>
 <body>
-    <div class="container">
-        <h1>Hello, GitHub Pages!</h1>
-        <p>Your website is successfully hosted on GitHub.</p>
-
-        <p>
-            Learn more about
-            <a href="https://pages.github.com/" target="_blank">
-                GitHub Pages
-            </a>.
-        </p>
-
-        <div class="footer">
-     
-        </div>
-    </div>
-</body>
-</html>
+<header class="wrap"><nav><a class="brand" href="#top" aria-label="Jake home">J<span>.</span></a><div class="links"><a href="#expertise">Expertise</a><a href="#experience">Experience</a><a href="#education">Education</a><a href="#connect">Connect</a></div></nav></header>
+<main id="top">
+<div class="wrap hero"><div><div class="eyebrow">Principal Engineer · Technology Leader</div><h1>Building what’s <em>next.</em></h1><p class="lead">I’m Jake — a technology leader with 20+ years of experience designing, supporting, and evolving enterprise technology. My work spans unified communications, contact centers, cloud platforms, networking, and the teams that bring complex systems to life.</p><div class="actions"><a class="btn primary" href="#experience">Explore my experience</a><a class="btn secondary" href="https://github.com/jcliff01" target="_blank" rel="noopener noreferrer">View GitHub ↗</a></div></div>
+<aside class="hero-card"><div class="tiny">At a glance</div><div class="stat"><strong>20+ years</strong><span>Enterprise technology experience</span></div><div class="stat"><strong>Principal</strong><span>Engineering and technical leadership</span></div><div class="stat"><strong>Cloud + AI</strong><span>Modern platforms and automation</span></div></aside></div>
+<section id="expertise"><div class="wrap"><div class="section-head"><div><div class="eyebrow">What I work on</div><h2>Technology at the intersection.</h2></div><p class="note">Connecting infrastructure, platforms, and people to solve difficult enterprise problems.</p></div><div class="grid">
+<article class="skill"><small>01 / COMMUNICATIONS</small><h3>Unified Communications</h3><p>Cisco collaboration, SIP, VoIP, and enterprise voice infrastructure.</p></article>
+<article class="skill"><small>02 / CUSTOMER EXPERIENCE</small><h3>Contact Centers</h3><p>Cisco and Genesys platforms, architecture, and operational systems.</p></article>
+<article class="skill"><small>03 / CLOUD</small><h3>Cloud Platforms</h3><p>AWS, Azure, and modern enterprise infrastructure.</p></article>
+<article class="skill"><small>04 / NETWORKS</small><h3>Network Engineering</h3><p>Converged networks, connectivity, and complex troubleshooting.</p></article>
+<article class="skill"><small>05 / EMERGING TECH</small><h3>AI & Automation</h3><p>Practical automation and intelligent approaches to enterprise work.</p></article>
+<article class="skill"><small>06 / LEADERSHIP</small><h3>Architecture & Strategy</h3><p>Solution architecture, technical direction, and engineering leadership.</p></article>
+</div></div></section>
+<section id="experience"><div class="wrap"><div class="section-head"><div><div class="eyebrow">The journey</div><h2>Experience built over time.</h2></div><p class="note">A career shaped by hands-on engineering, solving complex problems, and growing into technical leadership.</p></div><div class="timeline">
+<article class="role"><div class="role-top"><h3>Principal Engineer</h3><span class="date">2025 — Present</span></div><p class="company">C1</p></article>
+<article class="role"><div class="role-top"><h3>Technical Team Lead</h3><span class="date">2020 — 2025</span></div><p class="company">C1</p></article>
+<article class="role"><div class="role-top"><h3>Advanced Diagnostic Engineer</h3><span class="date">2018 — 2020</span></div><p class="company">C1</p></article>
+<article class="role"><div class="role-top"><h3>Solutions Architect</h3><span class="date">2014 — 2018</span></div><p class="company">C1</p></article>
+<article class="role"><div class="role-top"><h3>Senior Unified Communications Engineer</h3><span class="date">2009 — 2014</span></div><p class="company">C1</p></article>
+<article class="role"><div class="role-top"><h3>Converged Network Engineer</h3><span class="date">2006 — 2009</span></div><p class="company">C1</p></article>
+<article class="role"><div class="role-top"><h3>Information Technology Project Analyst · Part-Time</h3><span class="date">2000 — 2006</span></div><p class="company">City of Marshfield, Wisconsin</p></article>
+</div></div></section>
+<section id="education"><div class="wrap"><div class="section-head"><div><div class="eyebrow">The foundation</div><h2>Education.</h2></div></div><div class="schools">
+<article class="school"><h3>University of Wisconsin–Stout</h3><p>B.S. Information Technology Management · 2002–2006</p><p class="highlight">Magna Cum Laude · GPA 3.8<br>Vice President, Stout Student Association</p></article>
+<article class="school"><h3>Marshfield High School</h3><p>Class of 2002</p></article>
+</div></div></section>
+<section id="connect"><div class="wrap"><div class="closing"><div><div class="eyebrow">Find me online</div><h2>Good technology starts with curiosity.</h2><p class="lead">Explore my work and projects on GitHub.</p></div><a class="btn primary" href="https://github.com/jcliff01" target="_blank" rel="noopener noreferrer">Connect on GitHub ↗</a></div></div></section>
+</main>
+<footer class="wrap"><span>© <span id="year">2026</span> Jake. Built with care.</span><span>Designed for clarity. Built for the web.</span></footer>
+<script>document.getElementById("year").textContent=new Date().getFullYear();</script>
+</body></html>
