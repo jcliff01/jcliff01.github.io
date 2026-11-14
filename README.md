@@ -1,4 +1,4 @@
-## Principal Engineer | Unified Communications | Cloud | Contact Centers
+## Principal Engineer
 
 Technology leader with 20+ years of experience in enterprise communications, networking, contact centers, cloud technologies, and technical leadership.
 
