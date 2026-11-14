@@ -45,3 +45,5 @@ Class of 2002
 - Cybersecurity
 - Solution Architecture
 - Technical Leadership
+
+https://www.linkedin.com/in/jakehilber/
