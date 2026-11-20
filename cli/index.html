@@ -71,7 +71,7 @@ function run(raw) {
   }
   const entry = element("div", "");
   entry.className = "entry";
-  const prompt = element("span", "visitor@jake:~$ ");
+  const prompt = element("span", "Jake> ");
   prompt.className = "prompt";
   entry.append(prompt, document.createTextNode(raw.trim()));
   if (command === "help" || command === "?") {
