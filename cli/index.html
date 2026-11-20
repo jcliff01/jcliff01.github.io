@@ -16,13 +16,10 @@ h1{font-size:1.35rem;margin:0}a{color:var(--accent);text-underline-offset:4px}
 .terminal a{overflow-wrap:anywhere}.intro{margin:0 0 16px;color:var(--quiet)}.prompt{color:var(--accent);white-space:nowrap}
 form{display:flex;align-items:center;gap:9px;border-top:1px solid var(--line);padding-top:14px;margin-top:16px}
 input{flex:1;min-width:0;width:0;background:transparent;color:var(--text);font:inherit;border:0;padding:6px 3px}
-button{font:inherit;color:var(--accent);background:#1c272e;border:1px solid var(--line);border-radius:6px;padding:5px 11px;cursor:pointer}
 :focus-visible{outline:2px solid var(--accent);outline-offset:3px}
-.shortcuts{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
 #output{max-height:min(52vh,450px);overflow:auto;overflow-wrap:anywhere;white-space:pre-wrap}
 .entry{margin:0 0 15px}.entry p,.entry ul,.entry dl{margin:3px 0 0}.entry ul{padding-left:24px}
 .entry dl{white-space:normal}.entry dt{color:var(--accent)}.entry dd{margin:0 0 7px}
-@media(max-width:440px){form{flex-wrap:wrap}form label{width:100%}}
 </style>
 </head>
 <body>
@@ -30,18 +27,12 @@ button{font:inherit;color:var(--accent);background:#1c272e;border:1px solid var(
 <header><h1>Jake / Portfolio CLI</h1><a href="/">Main site</a></header>
 <section class="terminal" aria-label="Portfolio terminal">
 <p class="intro">Principal engineer · Infrastructure, communications, and automation.</p>
-<p class="intro">Type <strong>help</strong> to see commands, or choose one below.</p>
+<p class="intro">Type <strong>help</strong> or <strong>?</strong> and press Enter.</p>
 <div id="output" role="log" aria-label="Terminal output" aria-live="polite"></div>
 <form id="terminal-form">
-<label class="prompt" for="command">visitor@jake:~$</label>
-<input id="command" aria-label="Command" spellcheck="false" autocomplete="off" autocapitalize="none" enterkeyhint="go" maxlength="120">
-<button type="submit">Run</button>
+<label class="prompt" for="command">Jake&gt;</label>
+<input id="command" aria-label="Command" spellcheck="false" autocomplete="off" autocapitalize="none" enterkeyhint="enter" maxlength="120">
 </form>
-<nav class="shortcuts" aria-label="Quick commands">
-<button type="button" data-command="help">help</button>
-<button type="button" data-command="about">about</button>
-<button type="button" data-command="projects">projects</button>
-</nav>
 <noscript><p>Enable JavaScript to use the terminal. <a href="/">Browse Jake’s main site</a>.</p></noscript>
 </section>
 </main>
@@ -83,12 +74,12 @@ function run(raw) {
   const prompt = element("span", "visitor@jake:~$ ");
   prompt.className = "prompt";
   entry.append(prompt, document.createTextNode(raw.trim()));
-  if (command === "help") {
+  if (command === "help" || command === "?") {
     const list = element("dl", "");
     for (const [name, [description]] of commands) {
       list.append(element("dt", name), element("dd", description));
     }
-    entry.append(list, element("p", "Use ↑ and ↓ to recall commands."));
+    entry.append(list, element("p", "Tab completes a unique command. ↑ and ↓ recall commands."));
   } else {
     const result = commands.get(command)?.[1];
     if (Array.isArray(result)) {
@@ -111,13 +102,23 @@ function run(raw) {
 }
 document.querySelector("#terminal-form").addEventListener("submit", event => {
   event.preventDefault();
-  run(input.value);
+  const line = input.value;
   input.value = "";
+  run(line);
+  input.focus({preventScroll: true});
 });
-for (const button of document.querySelectorAll("[data-command]")) {
-  button.addEventListener("click", () => run(button.dataset.command));
-}
 input.addEventListener("keydown", event => {
+  if (event.isComposing) return;
+  if (event.key === "Tab" && !event.shiftKey) {
+    const prefix = input.value.trim().toLowerCase();
+    if (!prefix) return;
+    const matches = [...commands.keys()].filter(name => name.startsWith(prefix));
+    if (matches.length === 1 && matches[0] !== prefix) {
+      event.preventDefault();
+      input.value = matches[0];
+    }
+    return;
+  }
   if (event.key !== "ArrowUp" && event.key !== "ArrowDown") return;
   event.preventDefault();
   if (historyPosition === history.length) draft = input.value;
@@ -125,6 +126,9 @@ input.addEventListener("keydown", event => {
     historyPosition + (event.key === "ArrowUp" ? -1 : 1)));
   input.value = history[historyPosition] ?? draft;
 });
+if (window.matchMedia("(pointer: fine)").matches) {
+  input.focus({preventScroll: true});
+}
 </script>
 </body>
 </html>
