@@ -14,8 +14,8 @@ header{display:flex;justify-content:space-between;align-items:center;gap:12px;ma
 h1{font-size:1.35rem;margin:0}a{color:var(--accent);text-underline-offset:4px}
 .terminal{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:clamp(14px,4vw,30px);font:1rem/1.65 ui-monospace,Consolas,monospace;overflow:hidden}
 .terminal a{overflow-wrap:anywhere}.intro{margin:0 0 16px;color:var(--quiet)}.prompt{color:var(--accent);white-space:nowrap}
-form{display:flex;align-items:center;gap:9px;border-top:1px solid var(--line);padding-top:14px;margin-top:16px}
-input{flex:1;min-width:0;width:0;background:transparent;color:var(--text);font:inherit;border:0;padding:6px 3px}
+form{display:flex;align-items:center;gap:9px;margin:0}
+input{flex:1;min-width:0;width:0;background:transparent;color:var(--text);font:inherit;border:0;padding:0}
 :focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 #command{appearance:none;outline:none;box-shadow:none;caret-color:var(--accent)}
 #output{max-height:min(52vh,450px);overflow:auto;overflow-wrap:anywhere;white-space:pre-wrap}
@@ -62,7 +62,13 @@ function element(tag, text) {
 }
 function run(raw) {
   const command = raw.trim().toLowerCase();
-  if (!command) return;
+  if (!command) {
+    const line = element("div", "guest@jcliff01:~$");
+    line.className = "prompt";
+    output.append(line);
+    output.scrollTop = output.scrollHeight;
+    return;
+  }
   history.push(raw.trim());
   historyPosition = history.length;
   draft = "";
