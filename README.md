@@ -46,4 +46,3 @@ Class of 2002
 - Solution Architecture
 - Technical Leadership
 
-https://www.linkedin.com/in/jakehilber/
