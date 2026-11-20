@@ -30,7 +30,7 @@ input{flex:1;min-width:0;width:0;background:transparent;color:var(--text);font:i
 <p class="intro">Type <strong>help</strong> or <strong>?</strong> and press Enter.</p>
 <div id="output" role="log" aria-label="Terminal output" aria-live="polite"></div>
 <form id="terminal-form">
-<label class="prompt" for="command">Jake&gt;</label>
+<label class="prompt" for="command">guest@jake:~$</label>
 <input id="command" aria-label="Command" spellcheck="false" autocomplete="off" autocapitalize="none" enterkeyhint="enter" maxlength="120">
 </form>
 <noscript><p>Enable JavaScript to use the terminal. <a href="/">Browse Jake’s main site</a>.</p></noscript>
@@ -71,7 +71,7 @@ function run(raw) {
   }
   const entry = element("div", "");
   entry.className = "entry";
-  const prompt = element("span", "Jake> ");
+  const prompt = element("span", "guest@jake:~$ ");
   prompt.className = "prompt";
   entry.append(prompt, document.createTextNode(raw.trim()));
   if (command === "help" || command === "?") {
