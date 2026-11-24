@@ -15,7 +15,7 @@ Technology leader with 20+ years of experience in enterprise communications, net
 
 ### City of Marshfield, WI
 
-**Information Technology Project Analyst (Part-Time)**  
+**Information Technology Project Analyst (Part-Time)**
 2000–2006
 
 Supported IT projects while completing high school and university studies.
@@ -23,7 +23,7 @@ Supported IT projects while completing high school and university studies.
 ## Education
 
 ### University of Wisconsin–Stout
-**B.S. Information Technology Management**  
+**B.S. Information Technology Management**
 2002–2006
 
 - Magna Cum Laude
@@ -46,3 +46,10 @@ Class of 2002
 - Solution Architecture
 - Technical Leadership
 
+## Website
+
+Visit the [portfolio](https://jcliff01.github.io/) or open the [interactive CLI](https://jcliff01.github.io/cli/). This repository contains the source for both pages.
+
+## Reuse
+
+This repository has no project-wide reuse license. For permission to reuse portfolio text or site assets, contact the maintainer. Third-party materials retain their own terms.
