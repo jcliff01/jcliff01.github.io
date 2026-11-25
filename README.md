@@ -2,6 +2,10 @@
 
 The source of **[jcliff01.github.io](https://jcliff01.github.io/)**, my portfolio, and of its **[interactive command-line version](https://jcliff01.github.io/cli/)**, where you type commands to explore it. The summary below is the same content in short.
 
+| Portfolio | Command-line version |
+| --- | --- |
+| ![The portfolio home page](docs/screenshot-site.png) | ![The command-line version after typing about and projects](docs/screenshot-cli.png) |
+
 ## Principal Engineer
 
 Technology leader with 20+ years of experience in enterprise communications, networking, contact centers, cloud technologies, and technical leadership.
