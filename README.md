@@ -30,8 +30,6 @@ Supported IT projects while completing high school and university studies.
 - GPA: 3.8
 - Vice President, Stout Student Association (student body)
 
-### Marshfield High School
-Class of 2002
 
 ## Skills
 
