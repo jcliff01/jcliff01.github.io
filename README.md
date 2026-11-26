@@ -1,3 +1,11 @@
+# Jake's portfolio site
+
+The source of **[jcliff01.github.io](https://jcliff01.github.io/)**, my portfolio, and of its **[interactive command-line version](https://jcliff01.github.io/cli/)**, where you type commands to explore it. The summary below is the same content in short.
+
+| Portfolio | Command-line version |
+| --- | --- |
+| ![The portfolio home page](docs/screenshot-site.png) | ![The command-line version after typing about and projects](docs/screenshot-cli.png) |
+
 ## Principal Engineer
 
 Technology leader with 20+ years of experience in enterprise communications, networking, contact centers, cloud technologies, and technical leadership.
@@ -44,9 +52,18 @@ Supported IT projects while completing high school and university studies.
 - Solution Architecture
 - Technical Leadership
 
-## Website
+## Edit and preview the site
 
-Visit the [portfolio](https://jcliff01.github.io/) or open the [interactive CLI](https://jcliff01.github.io/cli/). This repository contains the source for both pages.
+The site is two plain HTML files, `index.html` (the portfolio) and `cli/index.html` (the command-line version), with no build step. GitHub Pages publishes `main` automatically a minute or two after each change.
+
+To preview a change on your own computer before publishing, run a small web server in this folder and open http://localhost:8000/:
+
+| Computer | Command |
+| --- | --- |
+| Windows | `py -m http.server 8000` (install Python with `winget install Python.Python.3.12`) |
+| macOS or Linux | `python3 -m http.server 8000` |
+
+Opening `index.html` by double-clicking also works, but the link to the command-line version needs the web server.
 
 ## Reuse
 
